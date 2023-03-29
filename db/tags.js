@@ -1,5 +1,7 @@
 const { client } = require("./index");
 
+//test
+
 async function getAllTags() {
     const { rows } = await client.query(`
       SELECT * FROM tags
