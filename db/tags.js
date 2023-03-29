@@ -1,3 +1,5 @@
+const { client } = require("./index");
+
 async function getAllTags() {
     const { rows } = await client.query(`
       SELECT * FROM tags
@@ -65,3 +67,10 @@ async function getAllTags() {
       throw error;
     }
   }
+
+  module.exports = {
+    getAllTags,
+    createTags,
+    createCarTag,
+    addTagsToCar
+  };
