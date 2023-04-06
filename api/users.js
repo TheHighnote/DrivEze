@@ -121,15 +121,11 @@ usersRouter.get("/me", async (req, res, next) => {
   }
 });
 
-usersRouter.patch("/", async (req, res, next) => {
+usersRouter.patch("/:userId", async (req, res, next) => {
   try {
-    if (req.user) {
-      let userId = req.user.id;
-      const updatedUser = await updateUser({ userId, ...req.body });
-      res.send(updatedUser);
-    } else {
-      res.sendStatus(401);
-    }
+    const userId = req.params.userId;
+    const updatedUser = await updateUser({ userId, ...req.body });
+    res.send(updatedUser);
   } catch (error) {
     console.log(error);
     next(error);

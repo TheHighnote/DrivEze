@@ -185,12 +185,23 @@ async function createInitialUsers() {
   console.log("Starting to create users...");
   try {
     const usersToCreate = [
-      { username: "albert", password: "bertie99", email: "albert@gmail.com" },
-      { username: "sandra", password: "sandra123", email: "sandra@gmail.com" },
+      {
+        username: "albert",
+        password: "bertie99",
+        email: "albert@gmail.com",
+        location: "",
+      },
+      {
+        username: "sandra",
+        password: "sandra123",
+        email: "sandra@gmail.com",
+        location: "",
+      },
       {
         username: "glamgal",
         password: "glamgal123",
         email: "glamgal@gmail.com",
+        location: "",
       },
     ];
     //const users = await Promise.all(usersToCreate.map(createUser));
